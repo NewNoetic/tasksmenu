@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		DC25CECB2440AA8500B89FB4 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC25CECA2440AA8500B89FB4 /* TasksViewController.swift */; };
 		DC25CECD2440AFDC00B89FB4 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC25CECC2440AFDC00B89FB4 /* EventMonitor.swift */; };
 		DC25CED02440B76D00B89FB4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC25CECF2440B76D00B89FB4 /* WebKit.framework */; };
+		DCD774EE244F70E100AA9A04 /* WebKitUrlFix in Frameworks */ = {isa = PBXBuildFile; productRef = DCD774ED244F70E100AA9A04 /* WebKitUrlFix */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD774EE244F70E100AA9A04 /* WebKitUrlFix in Frameworks */,
 				DC25CED02440B76D00B89FB4 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +97,7 @@
 			);
 			name = TasksMenu;
 			packageProductDependencies = (
+				DCD774ED244F70E100AA9A04 /* WebKitUrlFix */,
 			);
 			productName = KeepMenu;
 			productReference = DC25CEB72440A8D800B89FB4 /* TasksMenu.app */;
@@ -124,6 +127,9 @@
 				Base,
 			);
 			mainGroup = DC25CEAE2440A8D800B89FB4;
+			packageReferences = (
+				DCD774EC244F70E100AA9A04 /* XCRemoteSwiftPackageReference "webkiturlfix" */,
+			);
 			productRefGroup = DC25CEB82440A8D800B89FB4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -349,6 +355,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DCD774EC244F70E100AA9A04 /* XCRemoteSwiftPackageReference "webkiturlfix" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/newnoetic/webkiturlfix";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DCD774ED244F70E100AA9A04 /* WebKitUrlFix */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCD774EC244F70E100AA9A04 /* XCRemoteSwiftPackageReference "webkiturlfix" */;
+			productName = WebKitUrlFix;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC25CEAF2440A8D800B89FB4 /* Project object */;
 }

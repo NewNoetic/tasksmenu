@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "WebKitUrlFix",
+        "repositoryURL": "https://github.com/newnoetic/webkiturlfix",
+        "state": {
+          "branch": null,
+          "revision": "f2131537f609a5b7e271e504cdf041d6a554ec4e",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
