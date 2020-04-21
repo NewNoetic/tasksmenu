@@ -8,15 +8,20 @@
 
 import Cocoa
 import WebKit
+import WebKitUrlFix
 
 class TaskViewController: NSViewController {
 
     @IBOutlet weak var webView: WKWebView!
+    let webKitFix = WebKitUrlFixer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         
+        webView.navigationDelegate = webKitFix
+        webView.uiDelegate = webKitFix
+                
         self.preferredContentSize = NSSize(width: 300, height: 500)
 
         let url = URL(string: "https://tasks.google.com/embed/?origin=https%3A%2F%2Fmail.google.com")
