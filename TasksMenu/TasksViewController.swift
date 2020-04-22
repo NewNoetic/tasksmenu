@@ -12,12 +12,15 @@ import WebKitUrlFix
 
 class TaskViewController: NSViewController {
 
+    weak var parentPopover: NSPopover?
     @IBOutlet weak var webView: WKWebView!
-    let webKitFix = WebKitUrlFixer()
+    var webKitFix: WebKitUrlFixer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        webKitFix = WebKitUrlFixer(forwardDelegate: self)
         
         webView.navigationDelegate = webKitFix
         webView.uiDelegate = webKitFix
@@ -27,6 +30,14 @@ class TaskViewController: NSViewController {
         let url = URL(string: "https://tasks.google.com/embed/?origin=https%3A%2F%2Fmail.google.com")
         let request = URLRequest(url: url!)
         webView.load(request)
+    }
+}
+
+extension TaskViewController: WKNavigationDelegate, WKUIDelegate {
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        print("close popup on link click")
+        self.parentPopover?.close()
+        return nil
     }
 }
 

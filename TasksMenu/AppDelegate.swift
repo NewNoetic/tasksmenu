@@ -28,7 +28,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         constructMenu()
         
         popover.animates = false
-        popover.contentViewController = TaskViewController.freshController()
+        let taskvc = TaskViewController.freshController()
+        taskvc.parentPopover = popover
+        popover.contentViewController = taskvc
         
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
             if let strongSelf = self, strongSelf.popover.isShown {
